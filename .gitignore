@@ -260,3 +260,5 @@ paket-files/
 __pycache__/
 *.pyc
 secrets.config
+/MendauPrediction.Web/Images/original
+/MendauPrediction.Web/Images/Upload

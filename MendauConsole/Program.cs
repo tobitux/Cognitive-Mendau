@@ -34,13 +34,17 @@ namespace MendauConsole
                     var tag = tags.Tags.FirstOrDefault(x => x.Name == tagName);
                     if (tag == null)
                     {
+                        Console.WriteLine($"Create Tag {tagName}");
                         tag = trainingApi.CreateTag(project.Id, tagName);
                         tags.Tags.Add(tag);
+                        Console.WriteLine($"Tag {tag.Name} created");
                     }
 
                     using (var stream = new MemoryStream(File.ReadAllBytes(file)))
                     {
+                        Console.WriteLine($"Start File Upload {file}");
                         trainingApi.CreateImagesFromData(project.Id, stream, new List<string>() { tag.Id.ToString() });
+                        Console.WriteLine($"Upload Complete.");
                     }
                 }
                 catch (Microsoft.Rest.HttpOperationException ex)

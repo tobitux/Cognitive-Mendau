@@ -1,0 +1,13 @@
+﻿@model MendauPrediction.Web.Models.UploadDocumentViewModel
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>Suche</h2>
+
+@using (Html.BeginForm("UploadDocument", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file" />
+    <input type="submit" name="Submit" id="Submit" value="Upload" />
+}
