@@ -53,6 +53,8 @@ namespace MendauPrediction.Web.Controllers
 
                     var vm = new UploadDocumentViewModel();
                     vm.Predictions = new List<Models.Prediction>();
+                    vm.OriginalFilename = "~/Images/Upload/" + fileName;
+                    
                     foreach (var p in result)
                     {
                         vm.Predictions.Add(p);

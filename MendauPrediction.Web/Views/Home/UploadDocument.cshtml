@@ -15,10 +15,14 @@
 
 @if (Model != null)
 {
+    <p>
+        <img src="@Url.Content(Model.OriginalFilename)" width="400px" />Uploaded Image
+    </p>
+
     foreach (var p in Model.Predictions)
     {
         <p>
-            <img src="@Url.Content(p.File)" width="600px" />
+            <img src="@Url.Content(p.File)" width="400px" />
             @p.Tag
         </p>}
 }
